@@ -157,8 +157,15 @@ for($i=0;$i<$no_ques;$i++) {
 
 echo '
 
-<center><h2>Result:</h2>'.$c_answers.' of '.$no_ques.'<p><b>'.(int)($c_answers*100/$no_ques).'%</b></p><p>You must study
-harder!</p><p><b>Time Spent</b></p><p>';
+<center><h2>Result:</h2>'.$c_answers.' of '.$no_ques.'<p><b>'.(int)($c_answers*100/$no_ques).'%</b></p>';
+if ($c_answers<$no_ques) {
+    echo'<p>You must study harder!</p>';
+}
+else{
+  echo'<p>Congratulations on getting 100%!!!</p>';
+}
+echo'<p><b>Time Spent</b></p><p>';
+
 printf("%02d:%02d",(int)($curr_time/60),($curr_time%60));
 echo '</p></center>
 
